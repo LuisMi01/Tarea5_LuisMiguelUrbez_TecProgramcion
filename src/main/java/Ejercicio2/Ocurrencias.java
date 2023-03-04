@@ -4,28 +4,24 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Ocurrencias {
-    static Scanner teclado = new Scanner(System.in);
     public static void main(String[] args) {
-        contar();
-    }
 
-    static ArrayList<Integer> lista = new ArrayList<Integer>();
-    public static void contar(){
-        int respuesta = teclado.nextInt();
+        Scanner entrada = new Scanner(System.in);
+        int[] contador = new int[10];
 
-
+        int numero = 0;
         do {
-            System.out.println("Cual es tu numero?");
-            respuesta = teclado.nextInt();
-            lista.add(respuesta);
-        }while(respuesta != -1);
+            System.out.print("Indicar un valor comprendido entre 0 y 9 o -1 para terminar: ");
+            numero = entrada.nextInt();
+            if (numero >= 0 && numero <= 9) {
+                contador[numero]++;
+                System.out.print("Otro valor, por favor o -1 para terminar... ");
+            }
+        } while (numero != -1);
 
-        for (int i = 0; i < lista.size(); i++) {
-            System.out.println("El numero " + i + " se repite " + lista.get(i)+ " veces");
+        for (int i = 0; i < 10; i++) {
+            System.out.println("Cantidad de " + i + ": " + contador[i]);
         }
-    }
-
-    public static void repetidos(){
 
     }
 }
