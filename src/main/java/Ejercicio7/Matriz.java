@@ -1,7 +1,6 @@
 package Ejercicio7;
 
 public class Matriz {
-
     public static void main(String[] args) {
         final int filas = 20;
         final int columnas = 30;
@@ -18,7 +17,6 @@ public class Matriz {
             for (int i = 0; i < columnas; i++) {
                 System.out.print(tabla[j][i] + " ");
             }
-            System.out.println();
         }
     }
 }
